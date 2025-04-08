@@ -1,0 +1,12 @@
+.NavBarComponent > .tercen-navbar > .tercen-logo-container > .tercen-logo {
+    background-image: url("logo.png");
+    cursor: pointer;
+    height: 100%;
+    width: 132px;
+    background-size: 132px 3rem;
+    background-repeat: no-repeat;
+}
+
+.home-logo {
+    background-image: url("small_logo.svg") !important;
+}
