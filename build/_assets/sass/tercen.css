@@ -17220,15 +17220,17 @@ readers do not read off random characters that represent icons */
   color: black;
 }
 
-.view-ActionButton, .WorkersComponent .ActionButton, .TasksComponent .ActionButton, .view-ActionMenu .ActionButton, .IssuePageComponent .ActionMenu .ActionButton, .AuthUserPageComponent .TabComponent .ActionMenu .ActionButton, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .ActionButton, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .ActionButton, .AuthUserProjectPageDocuments .central .ActionMenu .ActionButton {
+.view-ActionButton, .MCPClientComponent .prompt-container .ActionButton, .WorkersComponent .ActionButton, .TasksComponent .ActionButton, .view-ActionMenu .ActionButton, .IssuePageComponent .ActionMenu .ActionButton, .AuthUserPageComponent .TabComponent .ActionMenu .ActionButton, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .ActionButton, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .ActionButton, .AuthUserProjectPageDocuments .central .ActionMenu .ActionButton {
+  display: flex;
+  align-items: center;
   cursor: pointer;
   color: #005f75;
 }
-.view-ActionButton i, .WorkersComponent .ActionButton i, .TasksComponent .ActionButton i, .view-ActionMenu .ActionButton i, .IssuePageComponent .ActionMenu .ActionButton i, .AuthUserPageComponent .TabComponent .ActionMenu .ActionButton i, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .ActionButton i, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .ActionButton i, .AuthUserProjectPageDocuments .central .ActionMenu .ActionButton i {
+.view-ActionButton i, .MCPClientComponent .prompt-container .ActionButton i, .WorkersComponent .ActionButton i, .TasksComponent .ActionButton i, .view-ActionMenu .ActionButton i, .IssuePageComponent .ActionMenu .ActionButton i, .AuthUserPageComponent .TabComponent .ActionMenu .ActionButton i, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .ActionButton i, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .ActionButton i, .AuthUserProjectPageDocuments .central .ActionMenu .ActionButton i {
   font-size: 1.5em;
   margin-right: 0.5em;
 }
-.view-ActionButton a, .WorkersComponent .ActionButton a, .TasksComponent .ActionButton a, .view-ActionMenu .ActionButton a, .IssuePageComponent .ActionMenu .ActionButton a, .AuthUserPageComponent .TabComponent .ActionMenu .ActionButton a, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .ActionButton a, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .ActionButton a, .AuthUserProjectPageDocuments .central .ActionMenu .ActionButton a {
+.view-ActionButton a, .MCPClientComponent .prompt-container .ActionButton a, .WorkersComponent .ActionButton a, .TasksComponent .ActionButton a, .view-ActionMenu .ActionButton a, .IssuePageComponent .ActionMenu .ActionButton a, .AuthUserPageComponent .TabComponent .ActionMenu .ActionButton a, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .ActionButton a, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .ActionButton a, .AuthUserProjectPageDocuments .central .ActionMenu .ActionButton a {
   text-decoration: none;
 }
 .FormComponent > .form-button:hover {
@@ -17509,6 +17511,11 @@ readers do not read off random characters that represent icons */
 
 .TabComponent.vertical.tab-close > .component {
   display: none;
+}
+
+.TabComponent.vertical.tab-open {
+  box-shadow: 0px 0 8px rgba(0, 0, 0, 0.3);
+  margin-left: 5px;
 }
 
 .TabComponent.vertical > .buttons-container {
@@ -18775,6 +18782,16 @@ readers do not read off random characters that represent icons */
   border-right: 1px solid #eaf0f9;
 }
 
+.NamedFilterComponent > .name {
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+.NamedFilterComponent > .name .KeepOnGatingKeyComponent {
+  margin-left: 2em;
+}
+.NamedFilterComponent > .name .KeepOnGatingKeyComponent .FormLabel {
+  white-space: nowrap;
+}
 .FilterComponent {
   border: 1px solid #eaf0f9;
   margin: 5px 5px 5px 5px;
@@ -19586,7 +19603,7 @@ readers do not read off random characters that represent icons */
   flex: 1 1 auto;
   padding-left: 0;
   margin-bottom: 0;
-  background-image: url("brand/loading.svg");
+  background-image: url("/_assets/brand/loading.svg");
   background-size: auto 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -21584,6 +21601,274 @@ i[class^=tercen-]:before, i[class*=" tercen-"]:before {
   content: "\f135";
 }
 
+.MCPClientComponent {
+  padding-right: 0;
+  height: 100%;
+  max-width: 100%;
+}
+.MCPClientComponent .btn, .MCPClientComponent .SignInComponent #signBtn, .SignInComponent .MCPClientComponent #signBtn, .MCPClientComponent .sign-btn {
+  all: unset;
+}
+.MCPClientComponent .prompt-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 4em;
+}
+.MCPClientComponent .mcp-btn {
+  font-size: 1.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 1px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.MCPClientComponent .mcp-btn:hover {
+  background-color: #E4EFFB;
+}
+.MCPClientComponent .details-content {
+  background: white;
+  border: 1px solid #aaa;
+  display: none;
+  flex-direction: column-reverse;
+  gap: 5px;
+  padding: 10px;
+  padding-right: 0px;
+  margin-right: 10px;
+  width: 50%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.MCPClientComponent .BetterDropDownComponent {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+.MCPClientComponent .BetterDropDownComponent .mcp-btn.open {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.MCPClientComponent .messages-container {
+  padding-right: 1em;
+}
+.MCPClientComponent .MessageInfo {
+  display: none;
+}
+.MCPClientComponent .MessageInfo.show {
+  display: flex;
+}
+.MCPClientComponent .MessageInfo * {
+  margin: 0.25em;
+}
+.MCPClientComponent .prompt-container {
+  margin-bottom: 2em;
+  margin-top: 0.5em;
+  margin-right: 4em;
+  margin-left: 0.5em;
+  padding: 1em;
+  align-items: center;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+.MCPClientComponent .prompt-container .input-container {
+  margin-right: 1em;
+}
+.MCPClientComponent .prompt-container .ActionButton {
+  margin-right: 0.5em;
+}
+.MCPClientComponent .AIResponseComponent {
+  margin-bottom: 1em;
+}
+.MCPClientComponent .ThinkingComponent {
+  display: none;
+  background-color: #E4EFFB;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  flex-direction: column;
+}
+.MCPClientComponent .ThinkingComponent .signature {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.MCPClientComponent .ThinkingComponent * {
+  font-size: small !important;
+}
+.MCPClientComponent .ThinkingComponent.show {
+  display: flex;
+}
+.MCPClientComponent .modelSelectionComponent {
+  min-width: 10em;
+}
+.MCPClientComponent .modelSelectionComponent .BetterDropDownComponent {
+  margin: 0.5em;
+}
+.MCPClientComponent .modelSelectionComponent .details-content {
+  position-anchor: relative;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  transition: all 0.3s ease-in-out;
+  margin-right: 0;
+  padding-right: 1em;
+  min-width: 10em;
+}
+.MCPClientComponent .modelSelectionComponent .llmInfoComponent {
+  align-items: flex-start;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.MCPClientComponent .modelSelectionComponent .llmInfoComponent:hover {
+  background-color: #E4EFFB;
+}
+.MCPClientComponent .modelSelectionComponent .llmInfoComponent .llm {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+.MCPClientComponent .modelSelectionComponent .llmInfoComponent .model {
+  font-size: smaller;
+}
+.MCPClientComponent .AIDebugComponent {
+  display: none;
+  margin-bottom: 1em;
+  background-color: #86ABD3;
+  border-left: 3px solid rgb(96.6, 145.0363636364, 197.4);
+}
+.MCPClientComponent .AIDebugComponent summary {
+  cursor: pointer;
+  padding: 0.5em;
+  font-weight: bold;
+  background-color: rgb(96.6, 145.0363636364, 197.4);
+  border-bottom: 1px solid #ccc;
+}
+.MCPClientComponent .AIDebugComponent[open] {
+  border-left: 3px solid rgb(64.8, 119.2909090909, 178.2);
+}
+.MCPClientComponent .AIDebugComponent .content {
+  max-height: 300px;
+  width: 100%;
+  padding: 1em;
+  overflow-y: auto;
+}
+.MCPClientComponent .AIDebugComponent .content pre {
+  overflow: initial !important;
+}
+.MCPClientComponent .AIDebugComponent.show {
+  display: block;
+}
+.MCPClientComponent .PromptComponent {
+  margin-bottom: 1em;
+  margin-right: 2em;
+  margin-left: 0.5em;
+  align-items: flex-start;
+  border-bottom: #888 1px solid;
+  border-left: #888 1px solid;
+  border-bottom-left-radius: 10px;
+  padding-left: 1em;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.MCPClientComponent .PromptComponent:hover {
+  background-color: #E4EFFB;
+}
+.MCPClientComponent .PromptComponent .name {
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+.MCPClientComponent .PromptComponent .prompt {
+  font-size: smaller;
+}
+.MCPClientComponent .AIErrorComponent {
+  margin-bottom: 1em;
+  background-color: #dc3545;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 300px;
+  max-width: 100%;
+}
+.MCPClientComponent .AIErrorComponent summary {
+  cursor: pointer;
+  padding: 0.5em;
+  font-weight: bold;
+  background-color: rgb(189.2151898734, 32.7848101266, 47.7721518987);
+  border-bottom: 1px solid #ccc;
+}
+.MCPClientComponent .AIErrorComponent[open] {
+  border-left: 4px solid #888;
+}
+.MCPClientComponent .AIErrorComponent .content {
+  padding: 1em;
+}
+.MCPClientComponent .AIErrorComponent pre {
+  white-space: break-spaces;
+}
+.MCPClientComponent .UserPromptComponent {
+  justify-content: flex-end;
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+.MCPClientComponent .UserPromptComponent .TextComponent {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 0.7em;
+  max-width: 100%;
+  word-break: break-all;
+  background-color: #E4EFFB;
+}
+.MCPClientComponent .input-container .TextAreaComponent {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+.MCPClientComponent .InfoBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-bottom: 1px solid #dee2e6;
+  margin-top: 0;
+  padding-bottom: 1em;
+  margin-right: 1.5em;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.BetterDropDownComponent {
+  position: relative;
+  display: inline-block;
+}
+
+.details-content {
+  position: relative;
+  background: white;
+  padding: 10px;
+  border: 1px solid #aaa;
+  display: none;
+  flex-direction: column-reverse;
+  gap: 5px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.details-content.open {
+  display: flex;
+}
+
+.TextAreaComponent {
+  width: 100%;
+  min-height: 20px;
+  max-height: 200px;
+  resize: none;
+  overflow-y: hidden;
+}
+
 html, body, .viewport {
   width: 100%;
   height: 100%;
@@ -21605,13 +21890,13 @@ body {
 .CheckboxPropertyComponent, .BoolPropertyCheckBoxComponent > div,
 .CheckboxPropertyComponent > div, .CheckboxPropertyComponent.multi-selection > div, .InlineFormComponent, .InlineFormComponent > .form-controls, .InlineFormComponent .PropertyComponent, .InlineFormComponent .TextAreaPropertyComponent, .InlineFormComponent .EnumPropertyComponent, .InlineFormComponent .InputPropertyComponent, .InlineFormComponent .BoolPropertyButtonComponent, .InlineFormComponent .BoolPropertyComponent, .InlineFormComponent .PasswordPropertyComponent, .InlineFormComponent .BoolPropertyCheckBoxComponent,
 .InlineFormComponent .CheckboxPropertyComponent, .InlineFormComponent .BoolPropertyComponent > div, .InlineFormComponent .BoolPropertyComponent > div > div, .InlineFormComponent .BoolPropertyCheckBoxComponent > div,
-.InlineFormComponent .CheckboxPropertyComponent > div, .InlineFormComponent .inline-label, .TabComponent > .buttons-container > .buttons, .TabComponent.vertical > .buttons-container > .open-close-container, .SelectionListComponent .header, .RelationSelectionListComponent .header, .RelationListElement, .RelationListElement .header .icon-container, .OperatorComponent .header, .OperatorComponent .name-container, .CrosstabListComponentOld .header, .PreProcessorsListComponent > .na-settings, .CrosstabFilterListComponent > .na-settings, .FactorListComponent2 .header, .ToolbarQuitGroupBtn, .CollapseComponent2 .header, .CrosstabLayerListComponent, .CrosstabLayerComponent, .CrosstabLayerFactorsComponent, .FilterComponent > .header, .FilterExpressionComponent, .FilterExpressionComponent > .form, .filter-buttons, .SchemaSelectionListComponent .header, .SchemaSelectionListComponent .list, .DialogBase > .sci-modal-dialog, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .Dialog > .sci-modal-dialog, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog > .sci-modal-dialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog .dialogbody-container, .WizardStepRunDialog .sci-modal-footer .btns, .step, .WizardSummaryComponent, .MappingFactorWizardStepComponent, .SimpleConfigComponent, .CrosstabStepConfigComponent, .MappingFiltersWizardStepComponent, .MappingFiltersWizardStepComponent > .crosstab, .AccountPageComponent, .AccountComponent, .AccountComponent > .subscription-plans, .SubscriptionPlanComponent .plans, .SubscriptionPlanComponent .payment-method-container, .PlanComponent > .name-container, .GatherMeasurementComponent, .ProjectBreadcrumbComponent, .view-ActivityComponent, .AuthUserPageComponent .ActivityListComponent .ActivityComponent, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent .content, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .content, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent-Project, .AuthUserProjectPageDocuments .ActivityComponent, .view-ActivityComponent-Project .content, .AuthUserProjectPageDocuments .ActivityComponent .content, .view-ActivityComponent-Team, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent-Team .content, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .content, .SignInPageComponent .central, .LoginComponent .or, .LoginComponent .tercen-sign-components .links-container, .LoginComponent .external-sign-components, .LoginComponent .external-sign-components .AuthSignInComponent, .SignInComponent .forgot-remember-line, .CookieConsentComponent, .GateTreeNodeComponent .header, .GateTreeComponent .header, .StatisticTreeNodeComponent .header, .GateTreeNodeComponent .header .name-container, .GateTreeComponent .header .name-container, .StatisticTreeNodeComponent .header .name-container, .StatisticTreeNodeComponent, .ToolBarGateGroupBtn, .ValueCountComponent, .SelectedDocumentComponent, .SelectedDocumentComponent .icon-container, .FlexBoxC, .WindowComponent, .WindowDialog, .CreateGateComponent, .WindowDialog .footer, .EditMarkDownComponent, .ProjectObjectPathNameComponent, .ProjectObjectPathNameAndDescriptionComponent, .view-ServiceErrorComponent, .ServiceErrorComponent, .view-UserTeamListComponent-icononly, .view-UserTeamListComponent-1, .view-ProjectObjectListComponent-1, .view-TeamMembersComponent-1, .view-SchemaListComponent-1, .view-ObjectListComponent, .view-ProjectListComponent, .view-UserDocumentMenu .menu-header .UserTeamListComponent, .view-DocumentSelectionListComponent, .DocumentSelectionListComponent, .view-DocumentMenu, .view-DocumentMenu > .menu-header, .view-DocumentMenu > .menu-header > .name-container, .view-ProjectFSComponent, .view-EditMarkDownComponent, .DragInputFileComponent, .DragInputFileComponent .drop-box, .NavBarComponent, .SearchPageComponent, .SearchPageComponent .SearchDocumentComponent, .PageComponent, .StepPageComponent, .TableSchemaPageComponent, .AuthUserTeamPageDocuments .central, .IssuePageComponent, .AuthUserPageComponent .ProjectListComponent, .AuthUserPageComponent .ObjectListComponent, .AuthUserPageComponent .ProjectListComponent .OperatorDocumentComponent, .AuthUserPageComponent .ObjectListComponent .OperatorDocumentComponent, .AuthUserPageComponent .TabComponent .UserTeamListComponent, .AuthUserTeamPageDocuments, .AuthUserTeamPageDocuments .ProjectListComponent, .AuthUserTeamPageDocuments .ObjectListComponent, .AuthUserTeamPageDocuments .ProjectListComponent .OperatorDocumentComponent, .AuthUserTeamPageDocuments .ObjectListComponent .OperatorDocumentComponent, .AuthUserTeamPageDocuments .TabComponent .TeamMembersComponent, .AuthUserProjectPageDocuments, .AuthUserProjectPageDocuments .ProjectFSComponent, .AuthUserProjectPageDocuments .central, .ExplorePageComponent, .ExplorePageComponent .ProjectListComponent, .FilePageComponent, .CrosstabStepComponent, .WebAppOperatorComponent, .GatherStepComponent, .JoinStepComponent, .MeltStepComponent, .CrosstabPaletteComponent, .EditPaletteComponent, .EditRampPaletteComponent, .ColorChooser, .ColorChooser .ColorCube #control-container, .WorkflowComponent, .WorkflowReportComponent, .WorkflowReportComponent .ReportDataStepComponent, .FileTableComponent, .CollapseComponent, .WorkflowViewComponent, .WorkflowLogButtonComponent, .LogTaskComponent, .InputOutputStepSelectionListComponent,
-.StepSelectionListComponent, .AlertComponent > .sci-alert-content, .FormComponent, .FormComponentInputFirst, .Label, .LabelArea, .CheckboxPropertyComponent.multi-selection, .BorderLayoutComponent .left, .BorderLayoutComponent .left .left-container, .BorderLayoutComponent .central-container, .TabComponent, .TabComponent > .component, .TabComponent.horizontal > .component, .TabComponent.vertical > .buttons-container > .buttons, .TabComponent.vertical > .component, .SearchListComponent, .FilterListComponent, .CountListComponent, .SelectionListComponent, .RelationSelectionListComponent, .RelationSelectionListComponent .list, .RelationListElement .header .title, .OperatorComponent, .OperatorComponent .name-container > .name-version, .OperatorComponent .propertyValues, .DataStepOperatorComponent, .CrosstabAppComponent, .CrosstabStdComponent, .AnnotationAppComponent, .GateAppComponent, .CrosstabListComponentOld, .CrosstabValueFactorTreeView, .FactorListComponent2, .CrosstabViewComponent, .CrosstabViewComponent .wait, .CollapseComponent2, .AxisSettingsComponent, .AxisSettingsComponent .axis-container, .CrosstabTableComponent, .CrosstabFactorsComponent, .CrosstabFactorsComponent .OperatorSettingsEnvironmentComponent, .CrosstabFactorsComponent .OperatorPropertyValuesComponent, .SchemaSelectionListComponent, .TableStepComponent, .RelationSchemaComponent, .TableRelationComponent, .TableComponent, .DialogBase, .DialogBase > .sci-modal-dialog > .sci-modal-content, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .Dialog, .Dialog > .sci-modal-dialog > .sci-modal-content, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .ImportFileDocumentWizardStepComponent, .WizardStepComponent, .CreateWorkflowWizardStep_NameTags, .SimpleTableWizardStepComponent, .SimpleTableWizardStepComponent #tableContainer, .MetaFactorWizardStepComponentImpl, .ImportOperator, .CreateGitOperatorComponent, .ImportOperatorDialog .dialogbody, .WizardStepRunDialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .WizardStepRunDialog .dialogbody-container .stepConfigs, .wizard-header, .WizardSummaryComponent .tab-container, .WizardSummaryComponent .tab-container .OperatorSettingsComp, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent > .component, .MappingFactorWizardStepComponent > .step-config, .SimpleConfigComponent > .factor-list, .CrosstabStepConfigComponent > .CrosstabAppComponent, .MappingFiltersWizardStepComponent > .mapping-filter, .MappingFiltersWizardStepComponent > .crosstab > .crosstab-app, .SubscriptionPlanComponent, .PlanComponent > .price-container, .view-ActivityListComponent .list, .AuthUserPageComponent .ActivityListComponent .list, .AuthUserTeamPageDocuments .ActivityListComponent .list, .AuthUserProjectPageDocuments .ActivityListComponent .list, .DefaultPageComponent, .SignInPageComponent, .SignUpPageComponent .signup, .LoginComponent, .LoginComponent .tercen-sign-components, .SignInComponent, .WorkersComponent, .TasksComponent, .PopulationTreeComponent, .LibraryComponent {
+.InlineFormComponent .CheckboxPropertyComponent > div, .InlineFormComponent .inline-label, .TabComponent > .buttons-container > .buttons, .TabComponent.vertical > .buttons-container > .open-close-container, .SelectionListComponent .header, .RelationSelectionListComponent .header, .RelationListElement, .RelationListElement .header .icon-container, .OperatorComponent .header, .OperatorComponent .name-container, .CrosstabListComponentOld .header, .PreProcessorsListComponent > .na-settings, .CrosstabFilterListComponent > .na-settings, .FactorListComponent2 .header, .ToolbarQuitGroupBtn, .CollapseComponent2 .header, .CrosstabLayerListComponent, .CrosstabLayerComponent, .CrosstabLayerFactorsComponent, .NamedFilterComponent > .name .KeepOnGatingKeyComponent, .FilterComponent > .header, .FilterExpressionComponent, .FilterExpressionComponent > .form, .filter-buttons, .SchemaSelectionListComponent .header, .SchemaSelectionListComponent .list, .DialogBase > .sci-modal-dialog, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .Dialog > .sci-modal-dialog, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog > .sci-modal-dialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog .dialogbody-container, .WizardStepRunDialog .sci-modal-footer .btns, .step, .WizardSummaryComponent, .MappingFactorWizardStepComponent, .SimpleConfigComponent, .CrosstabStepConfigComponent, .MappingFiltersWizardStepComponent, .MappingFiltersWizardStepComponent > .crosstab, .AccountPageComponent, .AccountComponent, .AccountComponent > .subscription-plans, .SubscriptionPlanComponent .plans, .SubscriptionPlanComponent .payment-method-container, .PlanComponent > .name-container, .GatherMeasurementComponent, .ProjectBreadcrumbComponent, .view-ActivityComponent, .AuthUserPageComponent .ActivityListComponent .ActivityComponent, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent .content, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .content, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent-Project, .AuthUserProjectPageDocuments .ActivityComponent, .view-ActivityComponent-Project .content, .AuthUserProjectPageDocuments .ActivityComponent .content, .view-ActivityComponent-Team, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent-Team .content, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .content, .SignInPageComponent .central, .LoginComponent .or, .LoginComponent .tercen-sign-components .links-container, .LoginComponent .external-sign-components, .LoginComponent .external-sign-components .AuthSignInComponent, .SignInComponent .forgot-remember-line, .CookieConsentComponent, .GateTreeNodeComponent .header, .GateTreeComponent .header, .StatisticTreeNodeComponent .header, .GateTreeNodeComponent .header .name-container, .GateTreeComponent .header .name-container, .StatisticTreeNodeComponent .header .name-container, .StatisticTreeNodeComponent, .ToolBarGateGroupBtn, .ValueCountComponent, .SelectedDocumentComponent, .SelectedDocumentComponent .icon-container, .MCPClientComponent .prompt-container, .MCPClientComponent .UserPromptComponent, .FlexBoxC, .WindowComponent, .WindowDialog, .CreateGateComponent, .WindowDialog .footer, .EditMarkDownComponent, .ProjectObjectPathNameComponent, .ProjectObjectPathNameAndDescriptionComponent, .view-ServiceErrorComponent, .ServiceErrorComponent, .view-UserTeamListComponent-icononly, .view-UserTeamListComponent-1, .view-ProjectObjectListComponent-1, .view-TeamMembersComponent-1, .view-SchemaListComponent-1, .view-ObjectListComponent, .view-ProjectListComponent, .view-UserDocumentMenu .menu-header .UserTeamListComponent, .view-DocumentSelectionListComponent, .DocumentSelectionListComponent, .view-DocumentMenu, .view-DocumentMenu > .menu-header, .view-DocumentMenu > .menu-header > .name-container, .view-ProjectFSComponent, .view-EditMarkDownComponent, .DragInputFileComponent, .DragInputFileComponent .drop-box, .NavBarComponent, .SearchPageComponent, .SearchPageComponent .SearchDocumentComponent, .PageComponent, .StepPageComponent, .TableSchemaPageComponent, .AuthUserTeamPageDocuments .central, .IssuePageComponent, .AuthUserPageComponent .ProjectListComponent, .AuthUserPageComponent .ObjectListComponent, .AuthUserPageComponent .ProjectListComponent .OperatorDocumentComponent, .AuthUserPageComponent .ObjectListComponent .OperatorDocumentComponent, .AuthUserPageComponent .TabComponent .UserTeamListComponent, .AuthUserTeamPageDocuments, .AuthUserTeamPageDocuments .ProjectListComponent, .AuthUserTeamPageDocuments .ObjectListComponent, .AuthUserTeamPageDocuments .ProjectListComponent .OperatorDocumentComponent, .AuthUserTeamPageDocuments .ObjectListComponent .OperatorDocumentComponent, .AuthUserTeamPageDocuments .TabComponent .TeamMembersComponent, .AuthUserProjectPageDocuments, .AuthUserProjectPageDocuments .ProjectFSComponent, .AuthUserProjectPageDocuments .central, .ExplorePageComponent, .ExplorePageComponent .ProjectListComponent, .FilePageComponent, .CrosstabStepComponent, .WebAppOperatorComponent, .GatherStepComponent, .JoinStepComponent, .MeltStepComponent, .CrosstabPaletteComponent, .EditPaletteComponent, .EditRampPaletteComponent, .ColorChooser, .ColorChooser .ColorCube #control-container, .WorkflowComponent, .WorkflowReportComponent, .WorkflowReportComponent .ReportDataStepComponent, .FileTableComponent, .CollapseComponent, .WorkflowViewComponent, .WorkflowLogButtonComponent, .LogTaskComponent, .InputOutputStepSelectionListComponent,
+.StepSelectionListComponent, .AlertComponent > .sci-alert-content, .FormComponent, .FormComponentInputFirst, .Label, .LabelArea, .CheckboxPropertyComponent.multi-selection, .BorderLayoutComponent .left, .BorderLayoutComponent .left .left-container, .BorderLayoutComponent .central-container, .TabComponent, .TabComponent > .component, .TabComponent.horizontal > .component, .TabComponent.vertical > .buttons-container > .buttons, .TabComponent.vertical > .component, .SearchListComponent, .FilterListComponent, .CountListComponent, .SelectionListComponent, .RelationSelectionListComponent, .RelationSelectionListComponent .list, .RelationListElement .header .title, .OperatorComponent, .OperatorComponent .name-container > .name-version, .OperatorComponent .propertyValues, .DataStepOperatorComponent, .CrosstabAppComponent, .CrosstabStdComponent, .AnnotationAppComponent, .GateAppComponent, .CrosstabListComponentOld, .CrosstabValueFactorTreeView, .FactorListComponent2, .CrosstabViewComponent, .CrosstabViewComponent .wait, .CollapseComponent2, .AxisSettingsComponent, .AxisSettingsComponent .axis-container, .CrosstabTableComponent, .CrosstabFactorsComponent, .CrosstabFactorsComponent .OperatorSettingsEnvironmentComponent, .CrosstabFactorsComponent .OperatorPropertyValuesComponent, .SchemaSelectionListComponent, .TableStepComponent, .RelationSchemaComponent, .TableRelationComponent, .TableComponent, .DialogBase, .DialogBase > .sci-modal-dialog > .sci-modal-content, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .Dialog, .Dialog > .sci-modal-dialog > .sci-modal-content, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .ImportFileDocumentWizardStepComponent, .WizardStepComponent, .CreateWorkflowWizardStep_NameTags, .SimpleTableWizardStepComponent, .SimpleTableWizardStepComponent #tableContainer, .MetaFactorWizardStepComponentImpl, .ImportOperator, .CreateGitOperatorComponent, .ImportOperatorDialog .dialogbody, .WizardStepRunDialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .WizardStepRunDialog .dialogbody-container .stepConfigs, .wizard-header, .WizardSummaryComponent .tab-container, .WizardSummaryComponent .tab-container .OperatorSettingsComp, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent > .component, .MappingFactorWizardStepComponent > .step-config, .SimpleConfigComponent > .factor-list, .CrosstabStepConfigComponent > .CrosstabAppComponent, .MappingFiltersWizardStepComponent > .mapping-filter, .MappingFiltersWizardStepComponent > .crosstab > .crosstab-app, .SubscriptionPlanComponent, .PlanComponent > .price-container, .view-ActivityListComponent .list, .AuthUserPageComponent .ActivityListComponent .list, .AuthUserTeamPageDocuments .ActivityListComponent .list, .AuthUserProjectPageDocuments .ActivityListComponent .list, .DefaultPageComponent, .SignInPageComponent, .SignUpPageComponent .signup, .LoginComponent, .LoginComponent .tercen-sign-components, .SignInComponent, .WorkersComponent, .TasksComponent, .PopulationTreeComponent, .LibraryComponent, .MCPClientComponent, .MCPClientComponent .modelSelectionComponent .llmInfoComponent, .MCPClientComponent .PromptComponent {
   display: flex;
 }
 
 .FlexBoxC, .WindowComponent, .WindowDialog, .CreateGateComponent, .WindowDialog .footer, .EditMarkDownComponent, .ProjectObjectPathNameComponent, .ProjectObjectPathNameAndDescriptionComponent, .view-ServiceErrorComponent, .ServiceErrorComponent, .view-UserTeamListComponent-icononly, .view-UserTeamListComponent-1, .view-ProjectObjectListComponent-1, .view-TeamMembersComponent-1, .view-SchemaListComponent-1, .view-ObjectListComponent, .view-ProjectListComponent, .view-UserDocumentMenu .menu-header .UserTeamListComponent, .view-DocumentSelectionListComponent, .DocumentSelectionListComponent, .view-DocumentMenu, .view-DocumentMenu > .menu-header, .view-DocumentMenu > .menu-header > .name-container, .view-ProjectFSComponent, .view-EditMarkDownComponent, .DragInputFileComponent, .DragInputFileComponent .drop-box, .NavBarComponent, .SearchPageComponent, .SearchPageComponent .SearchDocumentComponent, .PageComponent, .StepPageComponent, .TableSchemaPageComponent, .AuthUserTeamPageDocuments .central, .IssuePageComponent, .AuthUserPageComponent .ProjectListComponent, .AuthUserPageComponent .ObjectListComponent, .AuthUserPageComponent .ProjectListComponent .OperatorDocumentComponent, .AuthUserPageComponent .ObjectListComponent .OperatorDocumentComponent, .AuthUserPageComponent .TabComponent .UserTeamListComponent, .AuthUserTeamPageDocuments, .AuthUserTeamPageDocuments .ProjectListComponent, .AuthUserTeamPageDocuments .ObjectListComponent, .AuthUserTeamPageDocuments .ProjectListComponent .OperatorDocumentComponent, .AuthUserTeamPageDocuments .ObjectListComponent .OperatorDocumentComponent, .AuthUserTeamPageDocuments .TabComponent .TeamMembersComponent, .AuthUserProjectPageDocuments, .AuthUserProjectPageDocuments .ProjectFSComponent, .AuthUserProjectPageDocuments .central, .ExplorePageComponent, .ExplorePageComponent .ProjectListComponent, .FilePageComponent, .CrosstabStepComponent, .WebAppOperatorComponent, .GatherStepComponent, .JoinStepComponent, .MeltStepComponent, .CrosstabPaletteComponent, .EditPaletteComponent, .EditRampPaletteComponent, .ColorChooser, .ColorChooser .ColorCube #control-container, .WorkflowComponent, .WorkflowReportComponent, .WorkflowReportComponent .ReportDataStepComponent, .FileTableComponent, .CollapseComponent, .WorkflowViewComponent, .WorkflowLogButtonComponent, .LogTaskComponent, .InputOutputStepSelectionListComponent,
-.StepSelectionListComponent, .AlertComponent > .sci-alert-content, .FormComponent, .FormComponentInputFirst, .Label, .LabelArea, .CheckboxPropertyComponent.multi-selection, .BorderLayoutComponent .left, .BorderLayoutComponent .left .left-container, .BorderLayoutComponent .central-container, .TabComponent, .TabComponent > .component, .TabComponent.horizontal > .component, .TabComponent.vertical > .buttons-container > .buttons, .TabComponent.vertical > .component, .SearchListComponent, .FilterListComponent, .CountListComponent, .SelectionListComponent, .RelationSelectionListComponent, .RelationSelectionListComponent .list, .RelationListElement .header .title, .OperatorComponent, .OperatorComponent .name-container > .name-version, .OperatorComponent .propertyValues, .DataStepOperatorComponent, .CrosstabAppComponent, .CrosstabStdComponent, .AnnotationAppComponent, .GateAppComponent, .CrosstabListComponentOld, .CrosstabValueFactorTreeView, .FactorListComponent2, .CrosstabViewComponent, .CrosstabViewComponent .wait, .CollapseComponent2, .AxisSettingsComponent, .AxisSettingsComponent .axis-container, .CrosstabTableComponent, .CrosstabFactorsComponent, .CrosstabFactorsComponent .OperatorSettingsEnvironmentComponent, .CrosstabFactorsComponent .OperatorPropertyValuesComponent, .SchemaSelectionListComponent, .TableStepComponent, .RelationSchemaComponent, .TableRelationComponent, .TableComponent, .DialogBase, .DialogBase > .sci-modal-dialog > .sci-modal-content, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .Dialog, .Dialog > .sci-modal-dialog > .sci-modal-content, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .ImportFileDocumentWizardStepComponent, .WizardStepComponent, .CreateWorkflowWizardStep_NameTags, .SimpleTableWizardStepComponent, .SimpleTableWizardStepComponent #tableContainer, .MetaFactorWizardStepComponentImpl, .ImportOperator, .CreateGitOperatorComponent, .ImportOperatorDialog .dialogbody, .WizardStepRunDialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .WizardStepRunDialog .dialogbody-container .stepConfigs, .wizard-header, .WizardSummaryComponent .tab-container, .WizardSummaryComponent .tab-container .OperatorSettingsComp, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent > .component, .MappingFactorWizardStepComponent > .step-config, .SimpleConfigComponent > .factor-list, .CrosstabStepConfigComponent > .CrosstabAppComponent, .MappingFiltersWizardStepComponent > .mapping-filter, .MappingFiltersWizardStepComponent > .crosstab > .crosstab-app, .SubscriptionPlanComponent, .PlanComponent > .price-container, .view-ActivityListComponent .list, .AuthUserPageComponent .ActivityListComponent .list, .AuthUserTeamPageDocuments .ActivityListComponent .list, .AuthUserProjectPageDocuments .ActivityListComponent .list, .DefaultPageComponent, .SignInPageComponent, .SignUpPageComponent .signup, .LoginComponent, .LoginComponent .tercen-sign-components, .SignInComponent, .WorkersComponent, .TasksComponent, .PopulationTreeComponent, .LibraryComponent {
+.StepSelectionListComponent, .AlertComponent > .sci-alert-content, .FormComponent, .FormComponentInputFirst, .Label, .LabelArea, .CheckboxPropertyComponent.multi-selection, .BorderLayoutComponent .left, .BorderLayoutComponent .left .left-container, .BorderLayoutComponent .central-container, .TabComponent, .TabComponent > .component, .TabComponent.horizontal > .component, .TabComponent.vertical > .buttons-container > .buttons, .TabComponent.vertical > .component, .SearchListComponent, .FilterListComponent, .CountListComponent, .SelectionListComponent, .RelationSelectionListComponent, .RelationSelectionListComponent .list, .RelationListElement .header .title, .OperatorComponent, .OperatorComponent .name-container > .name-version, .OperatorComponent .propertyValues, .DataStepOperatorComponent, .CrosstabAppComponent, .CrosstabStdComponent, .AnnotationAppComponent, .GateAppComponent, .CrosstabListComponentOld, .CrosstabValueFactorTreeView, .FactorListComponent2, .CrosstabViewComponent, .CrosstabViewComponent .wait, .CollapseComponent2, .AxisSettingsComponent, .AxisSettingsComponent .axis-container, .CrosstabTableComponent, .CrosstabFactorsComponent, .CrosstabFactorsComponent .OperatorSettingsEnvironmentComponent, .CrosstabFactorsComponent .OperatorPropertyValuesComponent, .SchemaSelectionListComponent, .TableStepComponent, .RelationSchemaComponent, .TableRelationComponent, .TableComponent, .DialogBase, .DialogBase > .sci-modal-dialog > .sci-modal-content, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .Dialog, .Dialog > .sci-modal-dialog > .sci-modal-content, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .ImportFileDocumentWizardStepComponent, .WizardStepComponent, .CreateWorkflowWizardStep_NameTags, .SimpleTableWizardStepComponent, .SimpleTableWizardStepComponent #tableContainer, .MetaFactorWizardStepComponentImpl, .ImportOperator, .CreateGitOperatorComponent, .ImportOperatorDialog .dialogbody, .WizardStepRunDialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .WizardStepRunDialog .dialogbody-container .stepConfigs, .wizard-header, .WizardSummaryComponent .tab-container, .WizardSummaryComponent .tab-container .OperatorSettingsComp, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent > .component, .MappingFactorWizardStepComponent > .step-config, .SimpleConfigComponent > .factor-list, .CrosstabStepConfigComponent > .CrosstabAppComponent, .MappingFiltersWizardStepComponent > .mapping-filter, .MappingFiltersWizardStepComponent > .crosstab > .crosstab-app, .SubscriptionPlanComponent, .PlanComponent > .price-container, .view-ActivityListComponent .list, .AuthUserPageComponent .ActivityListComponent .list, .AuthUserTeamPageDocuments .ActivityListComponent .list, .AuthUserProjectPageDocuments .ActivityListComponent .list, .DefaultPageComponent, .SignInPageComponent, .SignUpPageComponent .signup, .LoginComponent, .LoginComponent .tercen-sign-components, .SignInComponent, .WorkersComponent, .TasksComponent, .PopulationTreeComponent, .LibraryComponent, .MCPClientComponent, .MCPClientComponent .modelSelectionComponent .llmInfoComponent, .MCPClientComponent .PromptComponent {
   flex-direction: column;
 }
 
@@ -21624,7 +21909,7 @@ body {
 .CheckboxPropertyComponent, .BoolPropertyCheckBoxComponent > div,
 .CheckboxPropertyComponent > div, .CheckboxPropertyComponent.multi-selection > div, .InlineFormComponent, .InlineFormComponent > .form-controls, .InlineFormComponent .PropertyComponent, .InlineFormComponent .TextAreaPropertyComponent, .InlineFormComponent .EnumPropertyComponent, .InlineFormComponent .InputPropertyComponent, .InlineFormComponent .BoolPropertyButtonComponent, .InlineFormComponent .BoolPropertyComponent, .InlineFormComponent .PasswordPropertyComponent, .InlineFormComponent .BoolPropertyCheckBoxComponent,
 .InlineFormComponent .CheckboxPropertyComponent, .InlineFormComponent .BoolPropertyComponent > div, .InlineFormComponent .BoolPropertyComponent > div > div, .InlineFormComponent .BoolPropertyCheckBoxComponent > div,
-.InlineFormComponent .CheckboxPropertyComponent > div, .InlineFormComponent .inline-label, .TabComponent > .buttons-container > .buttons, .TabComponent.vertical > .buttons-container > .open-close-container, .SelectionListComponent .header, .RelationSelectionListComponent .header, .RelationListElement, .RelationListElement .header .icon-container, .DataStepOperatorComponent, .OperatorComponent .header, .OperatorComponent .name-container, .CrosstabListComponentOld .header, .PreProcessorsListComponent > .na-settings, .CrosstabFilterListComponent > .na-settings, .FactorListComponent2 .header, .ToolbarQuitGroupBtn, .CollapseComponent2 .header, .CrosstabLayerListComponent, .CrosstabLayerComponent, .CrosstabLayerFactorsComponent, .FilterComponent > .header, .FilterExpressionComponent, .FilterExpressionComponent > .form, .filter-buttons, .SchemaSelectionListComponent .header, .SchemaSelectionListComponent .list, .DialogBase > .sci-modal-dialog, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .Dialog > .sci-modal-dialog, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog > .sci-modal-dialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog .dialogbody-container, .WizardStepRunDialog .sci-modal-footer .btns, .step, .WizardSummaryComponent, .MappingFactorWizardStepComponent, .SimpleConfigComponent, .CrosstabStepConfigComponent, .MappingFiltersWizardStepComponent, .MappingFiltersWizardStepComponent > .crosstab, .AccountPageComponent, .AccountComponent, .AccountComponent > .subscription-plans, .SubscriptionPlanComponent .plans, .SubscriptionPlanComponent .payment-method-container, .PlanComponent > .name-container, .GatherMeasurementComponent, .ProjectBreadcrumbComponent, .view-ActivityComponent, .AuthUserPageComponent .ActivityListComponent .ActivityComponent, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent .content, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .content, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent-Project, .AuthUserProjectPageDocuments .ActivityComponent, .view-ActivityComponent-Project .content, .AuthUserProjectPageDocuments .ActivityComponent .content, .view-ActivityComponent-Team, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent-Team .content, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .content, .SignInPageComponent .central, .LoginComponent .or, .LoginComponent .tercen-sign-components .links-container, .LoginComponent .external-sign-components, .LoginComponent .external-sign-components .AuthSignInComponent, .SignInComponent .forgot-remember-line, .CookieConsentComponent, .GateTreeNodeComponent .header, .GateTreeComponent .header, .StatisticTreeNodeComponent .header, .GateTreeNodeComponent .header .name-container, .GateTreeComponent .header .name-container, .StatisticTreeNodeComponent .header .name-container, .StatisticTreeNodeComponent, .ToolBarGateGroupBtn, .ValueCountComponent, .SelectedDocumentComponent, .SelectedDocumentComponent .icon-container {
+.InlineFormComponent .CheckboxPropertyComponent > div, .InlineFormComponent .inline-label, .TabComponent > .buttons-container > .buttons, .TabComponent.vertical > .buttons-container > .open-close-container, .SelectionListComponent .header, .RelationSelectionListComponent .header, .RelationListElement, .RelationListElement .header .icon-container, .DataStepOperatorComponent, .OperatorComponent .header, .OperatorComponent .name-container, .CrosstabListComponentOld .header, .PreProcessorsListComponent > .na-settings, .CrosstabFilterListComponent > .na-settings, .FactorListComponent2 .header, .ToolbarQuitGroupBtn, .CollapseComponent2 .header, .CrosstabLayerListComponent, .CrosstabLayerComponent, .CrosstabLayerFactorsComponent, .NamedFilterComponent > .name .KeepOnGatingKeyComponent, .FilterComponent > .header, .FilterExpressionComponent, .FilterExpressionComponent > .form, .filter-buttons, .SchemaSelectionListComponent .header, .SchemaSelectionListComponent .list, .DialogBase > .sci-modal-dialog, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .Dialog > .sci-modal-dialog, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog > .sci-modal-dialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .WizardStepRunDialog .dialogbody-container, .WizardStepRunDialog .sci-modal-footer .btns, .step, .WizardSummaryComponent, .MappingFactorWizardStepComponent, .SimpleConfigComponent, .CrosstabStepConfigComponent, .MappingFiltersWizardStepComponent, .MappingFiltersWizardStepComponent > .crosstab, .AccountPageComponent, .AccountComponent, .AccountComponent > .subscription-plans, .SubscriptionPlanComponent .plans, .SubscriptionPlanComponent .payment-method-container, .PlanComponent > .name-container, .GatherMeasurementComponent, .ProjectBreadcrumbComponent, .view-ActivityComponent, .AuthUserPageComponent .ActivityListComponent .ActivityComponent, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent .content, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .content, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent-Project, .AuthUserProjectPageDocuments .ActivityComponent, .view-ActivityComponent-Project .content, .AuthUserProjectPageDocuments .ActivityComponent .content, .view-ActivityComponent-Team, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent, .view-ActivityComponent-Team .content, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .content, .SignInPageComponent .central, .LoginComponent .or, .LoginComponent .tercen-sign-components .links-container, .LoginComponent .external-sign-components, .LoginComponent .external-sign-components .AuthSignInComponent, .SignInComponent .forgot-remember-line, .CookieConsentComponent, .GateTreeNodeComponent .header, .GateTreeComponent .header, .StatisticTreeNodeComponent .header, .GateTreeNodeComponent .header .name-container, .GateTreeComponent .header .name-container, .StatisticTreeNodeComponent .header .name-container, .StatisticTreeNodeComponent, .ToolBarGateGroupBtn, .ValueCountComponent, .SelectedDocumentComponent, .SelectedDocumentComponent .icon-container, .MCPClientComponent .prompt-container, .MCPClientComponent .UserPromptComponent {
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -21635,7 +21920,7 @@ body {
 }
 
 .Flex1, .WindowComponent .header .draggable, .WindowDialog .header .draggable, .WindowComponent .header, .WindowDialog .header, .CreateGateComponent, .WindowDialog .footer .error, .WindowDialog .footer .buttons, .WindowDialog .footer, .EditMarkDownComponent, .EditMarkDownComponent .EditMarkDownValueComponent, .EditMarkDownComponent #textarea-container, .ProjectObjectPathNameComponent .path-container, .ProjectObjectPathNameComponent .path-container .InputTextComponent, .ProjectObjectPathNameAndDescriptionComponent .pathContainer .InputTextComponent, .MemberComponent, .view-ServiceErrorComponent, .ServiceErrorComponent, .view-UserTeamListComponent-icononly .list, .view-UserTeamListComponent-1 .list, .view-ProjectObjectListComponent-1 .list, .view-TeamMembersComponent-1 .list, .view-SchemaListComponent-1 .list, .view-ObjectListComponent, .view-ProjectListComponent, .view-TeamName, .view-ProjectMenu, .view-UserTeamMenu, .view-ActionMenu, .view-ProjectMenu .actions, .view-UserTeamMenu .actions, .view-ActionMenu .actions, .view-UserDocumentMenu .menu-header .UserTeamListComponent .list, .view-DocumentComponentMenu, .DocumentComponentMenu, .view-DocumentListElement .text-container .description, .DocumentListElement .text-container .description, .view-DocumentMenu, .view-MarkdownDocumentComponent, .view-MarkdownDocumentComponent .header .name, .view-ProjectFSComponent, .view-EditMarkDownComponent .FormComponent, .view-IssueListComponent, .IssueListComponent, .DragInputFileComponent, .DragInputFileComponent .drop-box, .NavBarComponent > .tercen-navbar > #search-bar, .PageComponent, .StepPageComponent, .TableSchemaPageComponent, .DefaultPageComponent, .DocumentsPageComponent, .DocumentsPageComponent .left-menu, .DocumentsPageComponent .scroll, .DocumentsPageComponent .central, .AuthUserTeamPageDocuments .UserDocumentMenu, .IssuePageComponent, .IssuePageComponent .ActionMenu, .IssuePageComponent .ActionMenu .actions, .AuthUserPageComponent .UserDocumentMenu, .AuthUserPageComponent .central, .AuthUserPageComponent .ProjectListComponent, .AuthUserPageComponent .ObjectListComponent, .AuthUserPageComponent .TabComponent .ActionMenu, .AuthUserPageComponent .TabComponent .ActionMenu .actions, .AuthUserPageComponent .TabComponent .UserTeamListComponent .list, .AuthUserTeamPageDocuments, .AuthUserTeamPageDocuments .ProjectListComponent, .AuthUserTeamPageDocuments .ObjectListComponent, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu, .AuthUserTeamPageDocuments .TabComponent .ActionMenu, .AuthUserTeamPageDocuments .TabComponent .TeamMemberMenu .actions, .AuthUserTeamPageDocuments .TabComponent .ActionMenu .actions, .AuthUserTeamPageDocuments .TabComponent .TeamMembersComponent .list, .AuthUserProjectPageDocuments, .AuthUserProjectPageDocuments .nameContainer, .AuthUserProjectPageDocuments .header .ListLayoutComponent .DocumentNameComponent2, .AuthUserProjectPageDocuments .ProjectFSComponent, .AuthUserProjectPageDocuments .MarkdownDocumentComponent, .AuthUserProjectPageDocuments .MarkdownDocumentComponent .header .name, .AuthUserProjectPageDocuments .central, .AuthUserProjectPageDocuments .central .ProjectMenu, .AuthUserProjectPageDocuments .central .ProjectMenu .actions, .AuthUserProjectPageDocuments .central .ActionMenu, .AuthUserProjectPageDocuments .central .ActionMenu .actions, .ExplorePageComponent, .ExplorePageComponent .ProjectListComponent, .FilePageComponent, .FilePageComponent .MarkdownDocumentComponent, .FilePageComponent .MarkdownDocumentComponent .header .name, .CrosstabStepComponent, .WebAppOperatorComponent, .WebAppOperatorComponent > iframe, .GatherStepComponent, .JoinStepComponent, .JoinStepComponent .selectionContainer, .MeltStepComponent, .MeltStepComponent .form-container, .EditRampPaletteComponent, .DoubleColorElementComponent #text-container, .ColorChooser, .WorkflowComponent, .WorkflowReportComponent, .WorkflowReportComponent .ReportDataStepComponent, .FileTableComponent, .FileTableComponent .file-container .filename-container, .WorkflowViewComponent, .InputOutputStepElement .text-container .description,
-.StepListElement .text-container .description, .SliderComponent, .FormComponent, .FormComponentInputFirst, .InlineFormComponent, .InlineFormComponent > .form-controls, .BorderLayoutComponent, .BorderLayoutComponent .left .left-container, .BorderLayoutComponent .central-container, .TabComponent, .TabComponent > .component, .TabComponent.horizontal > .component, .TabComponent.vertical, .TabComponent.vertical > .component, .SearchListComponent, .countContainer .CountListComponent, .ListModelRemoveComponent, .SelectionListComponent .list-element .value, .RelationListElement .description, .DataStepOperatorComponent, .DataStepOperatorComponent > .OperatorListComponent, .OperatorComponent .propertyValues, .CrosstabAppComponent, .CrosstabStdComponent, .AnnotationAppComponent, .GateAppComponent, .GateAppComponent .factors-container label, .CrosstabListComponentOld > .list .list-element .value, .FactorListComponent2 > .list .list-element .value, .ToolbarQuitGroupBtn, .CrosstabViewComponent, .CrosstabTableComponent, .CrosstabFactorsComponent, .CrosstabFactorsComponent .OperatorSettingsEnvironmentComponent, .CrosstabFactorsComponent .OperatorPropertyValuesComponent, .TableStepComponent, .RelationSchemaComponent, .TableRelationComponent, .TableComponent, .DialogBase > .sci-modal-dialog, .DialogBase > .sci-modal-dialog > .sci-modal-content, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .Dialog > .sci-modal-dialog, .Dialog > .sci-modal-dialog > .sci-modal-content, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .QuitPromptComponent .prompt-body, .QuitPromptComponent .prompt-body .prompt-container, .ImportFileDocumentWizardStepComponent, .WizardStepComponent, .CreateWorkflowWizardStep_NameTags, .SimpleTableWizardStepComponent, .SimpleTableWizardStepComponent #tableContainer, .TableUploadComponent .file-upload-container, .MetaFactorWizardStepComponentImpl, .ImportOperator, .ImportOperator > .OperatorSelectionListComponent, .ImportOperatorDialog .dialogbody, .WizardStepRunDialog > .sci-modal-dialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .WizardStepRunDialog .dialogbody-container, .WizardSummaryComponent, .WizardSummaryComponent .tab-container, .WizardSummaryComponent .tab-container .OperatorSettingsComp, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent, .MappingFactorWizardStepComponent, .MappingFactorWizardStepComponent > .step-config, .SimpleConfigComponent, .CrosstabStepConfigComponent, .CrosstabStepConfigComponent .mappingFactor-left > .mappingFactor .FactorListComponent2, .CrosstabStepConfigComponent > .CrosstabAppComponent, .MappingFiltersWizardStepComponent, .MappingFiltersWizardStepComponent > .crosstab, .MappingFiltersWizardStepComponent > .crosstab > .crosstab-app, .AccountPageComponent, .AccountComponent, .AccountComponent > .subscription-plans, .SubscriptionPlanComponent, .PlanComponent > .name-container .name, .GatherMeasurementComponent, .GatherMeasurementComponent > .ListLayoutComponent, .GatherMeasurementComponent .right, .ProjectBreadcrumbComponent, .view-ActivityListComponent .list, .AuthUserPageComponent .ActivityListComponent .list, .AuthUserTeamPageDocuments .ActivityListComponent .list, .AuthUserProjectPageDocuments .ActivityListComponent .list, .view-ActivityComponent .content, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .content, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent .date, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .date, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .date, .view-ActivityComponent-Project .content, .AuthUserProjectPageDocuments .ActivityComponent .content, .view-ActivityComponent-Project .date, .AuthUserProjectPageDocuments .ActivityComponent .date, .view-ActivityComponent-Team .content, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent-Team .date, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .date, .SignInPageComponent, .LoginComponent, .LoginComponent .or .left, .LoginComponent .or .right, .LoginComponent .tercen-sign-components, .LoginComponent .tercen-sign-components .links-container, .LoginComponent .external-sign-components .AuthSignInComponent, .WorkersComponent, .TasksComponent, .GateTreeNodeComponent .header, .GateTreeComponent .header, .StatisticTreeNodeComponent .header, .GateTreeNodeComponent .header .name-container, .GateTreeComponent .header .name-container, .StatisticTreeNodeComponent .header .name-container, .StatisticTreeNodeComponent, .PopulationTreeComponent, .LibraryComponent, .SelectedDocumentComponent .text-container .description {
+.StepListElement .text-container .description, .SliderComponent, .FormComponent, .FormComponentInputFirst, .InlineFormComponent, .InlineFormComponent > .form-controls, .BorderLayoutComponent, .BorderLayoutComponent .left .left-container, .BorderLayoutComponent .central-container, .TabComponent, .TabComponent > .component, .TabComponent.horizontal > .component, .TabComponent.vertical, .TabComponent.vertical > .component, .SearchListComponent, .countContainer .CountListComponent, .ListModelRemoveComponent, .SelectionListComponent .list-element .value, .RelationListElement .description, .DataStepOperatorComponent, .DataStepOperatorComponent > .OperatorListComponent, .OperatorComponent .propertyValues, .CrosstabAppComponent, .CrosstabStdComponent, .AnnotationAppComponent, .GateAppComponent, .GateAppComponent .factors-container label, .CrosstabListComponentOld > .list .list-element .value, .FactorListComponent2 > .list .list-element .value, .ToolbarQuitGroupBtn, .CrosstabViewComponent, .CrosstabTableComponent, .CrosstabFactorsComponent, .CrosstabFactorsComponent .OperatorSettingsEnvironmentComponent, .CrosstabFactorsComponent .OperatorPropertyValuesComponent, .TableStepComponent, .RelationSchemaComponent, .TableRelationComponent, .TableComponent, .DialogBase > .sci-modal-dialog, .DialogBase > .sci-modal-dialog > .sci-modal-content, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .Dialog > .sci-modal-dialog, .Dialog > .sci-modal-dialog > .sci-modal-content, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .QuitPromptComponent .prompt-body, .QuitPromptComponent .prompt-body .prompt-container, .ImportFileDocumentWizardStepComponent, .WizardStepComponent, .CreateWorkflowWizardStep_NameTags, .SimpleTableWizardStepComponent, .SimpleTableWizardStepComponent #tableContainer, .TableUploadComponent .file-upload-container, .MetaFactorWizardStepComponentImpl, .ImportOperator, .ImportOperator > .OperatorSelectionListComponent, .ImportOperatorDialog .dialogbody, .WizardStepRunDialog > .sci-modal-dialog, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body .dialogbody, .WizardStepRunDialog .dialogbody-container, .WizardSummaryComponent, .WizardSummaryComponent .tab-container, .WizardSummaryComponent .tab-container .OperatorSettingsComp, .WizardSummaryComponent .tab-container .OperatorSettingsComp .CollapseComponent, .MappingFactorWizardStepComponent, .MappingFactorWizardStepComponent > .step-config, .SimpleConfigComponent, .CrosstabStepConfigComponent, .CrosstabStepConfigComponent .mappingFactor-left > .mappingFactor .FactorListComponent2, .CrosstabStepConfigComponent > .CrosstabAppComponent, .MappingFiltersWizardStepComponent, .MappingFiltersWizardStepComponent > .crosstab, .MappingFiltersWizardStepComponent > .crosstab > .crosstab-app, .AccountPageComponent, .AccountComponent, .AccountComponent > .subscription-plans, .SubscriptionPlanComponent, .PlanComponent > .name-container .name, .GatherMeasurementComponent, .GatherMeasurementComponent > .ListLayoutComponent, .GatherMeasurementComponent .right, .ProjectBreadcrumbComponent, .view-ActivityListComponent .list, .AuthUserPageComponent .ActivityListComponent .list, .AuthUserTeamPageDocuments .ActivityListComponent .list, .AuthUserProjectPageDocuments .ActivityListComponent .list, .view-ActivityComponent .content, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .content, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent .date, .AuthUserPageComponent .ActivityListComponent .ActivityComponent .date, .AuthUserProjectPageDocuments .ActivityListComponent .ActivityComponent .date, .view-ActivityComponent-Project .content, .AuthUserProjectPageDocuments .ActivityComponent .content, .view-ActivityComponent-Project .date, .AuthUserProjectPageDocuments .ActivityComponent .date, .view-ActivityComponent-Team .content, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .content, .view-ActivityComponent-Team .date, .AuthUserTeamPageDocuments .ActivityListComponent .ActivityComponent .date, .SignInPageComponent, .LoginComponent, .LoginComponent .or .left, .LoginComponent .or .right, .LoginComponent .tercen-sign-components, .LoginComponent .tercen-sign-components .links-container, .LoginComponent .external-sign-components .AuthSignInComponent, .WorkersComponent, .TasksComponent, .GateTreeNodeComponent .header, .GateTreeComponent .header, .StatisticTreeNodeComponent .header, .GateTreeNodeComponent .header .name-container, .GateTreeComponent .header .name-container, .StatisticTreeNodeComponent .header .name-container, .StatisticTreeNodeComponent, .PopulationTreeComponent, .LibraryComponent, .SelectedDocumentComponent .text-container .description, .MCPClientComponent, .MCPClientComponent .messages-container, .MCPClientComponent .prompt-container .input-container {
   flex: 1;
 }
 
@@ -21644,7 +21929,7 @@ body {
 .StepListElement .text-container .header, .InputOutputStepElement .text-container > a,
 .StepListElement .text-container > a, .SliderComponent .IconComponent, .FormComponent > .form-button, .FormComponentInputFirst > .form-button, .PropertyComponent, .TextAreaPropertyComponent, .EnumPropertyComponent, .InputPropertyComponent, .BoolPropertyButtonComponent, .BoolPropertyComponent, .PasswordPropertyComponent, .BoolPropertyCheckBoxComponent,
 .CheckboxPropertyComponent, .InlineFormComponent > .form-button, .InlineFormComponent .PropertyComponent, .InlineFormComponent .TextAreaPropertyComponent, .InlineFormComponent .EnumPropertyComponent, .InlineFormComponent .InputPropertyComponent, .InlineFormComponent .BoolPropertyButtonComponent, .InlineFormComponent .BoolPropertyComponent, .InlineFormComponent .PasswordPropertyComponent, .InlineFormComponent .BoolPropertyCheckBoxComponent,
-.InlineFormComponent .CheckboxPropertyComponent, .TabComponent > .buttons-container > .buttons, .TabComponent.vertical.tab-close, .TabComponent.vertical > .buttons-container > .open-close-container .IconComponent, .TabComponent.vertical > .buttons-container > .buttons, .RelationListElement .header, .RelationListElement .header .icon-container, .RelationListElement > a, .DataStepOperatorComponent .DataStepOperatorSettingsComponent, .OperatorComponent .header, .OperatorComponent > i, .CrosstabListComponentOld .header, .FactorListComponent2 .header, .CrosstabViewComponent .wait, .CrosstabLayerListComponent > .layer-list, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .errors, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .errors, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .ImportFileDocumentWizardStepComponent .FormComponent, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .errors, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .wizard-header, .SimpleConfigComponent > .factor-list, .MappingFiltersWizardStepComponent > .mapping-filter > .filter, .SubscriptionPlanComponent .plans, .SubscriptionPlanComponent .payment-method-container, .SubscriptionPlanComponent .payment-method-container .description, .SubscriptionPlanComponent .payment-method-container .paymentBtn-container, .GatherMeasurementComponent .right .filter-by .all, .LoginComponent .or, .LoginComponent .or .center, .LoginComponent .title, .LoginComponent .external-sign-components, .LoginComponent .external-sign-components .AuthSignInComponent .ImageComponent, .WorkersComponent .action-buttons, .TasksComponent .action-buttons, .SelectedDocumentComponent, .SelectedDocumentComponent .icon-container, .SelectedDocumentComponent .text-container .header, .SelectedDocumentComponent .text-container > a {
+.InlineFormComponent .CheckboxPropertyComponent, .TabComponent > .buttons-container > .buttons, .TabComponent.vertical.tab-close, .TabComponent.vertical > .buttons-container > .open-close-container .IconComponent, .TabComponent.vertical > .buttons-container > .buttons, .RelationListElement .header, .RelationListElement .header .icon-container, .RelationListElement > a, .DataStepOperatorComponent .DataStepOperatorSettingsComponent, .OperatorComponent .header, .OperatorComponent > i, .CrosstabListComponentOld .header, .FactorListComponent2 .header, .CrosstabViewComponent .wait, .CrosstabLayerListComponent > .layer-list, .NamedFilterComponent > .name .KeepOnGatingKeyComponent, .NamedFilterComponent > .name .KeepOnGatingKeyComponent .FormLabel, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .errors, .DialogBase > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .errors, .Dialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .ImportFileDocumentWizardStepComponent .FormComponent, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-header, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .wait, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-body > .errors, .WizardStepRunDialog > .sci-modal-dialog > .sci-modal-content > .sci-modal-footer, .wizard-header, .SimpleConfigComponent > .factor-list, .MappingFiltersWizardStepComponent > .mapping-filter > .filter, .SubscriptionPlanComponent .plans, .SubscriptionPlanComponent .payment-method-container, .SubscriptionPlanComponent .payment-method-container .description, .SubscriptionPlanComponent .payment-method-container .paymentBtn-container, .GatherMeasurementComponent .right .filter-by .all, .LoginComponent .or, .LoginComponent .or .center, .LoginComponent .title, .LoginComponent .external-sign-components, .LoginComponent .external-sign-components .AuthSignInComponent .ImageComponent, .WorkersComponent .action-buttons, .TasksComponent .action-buttons, .SelectedDocumentComponent, .SelectedDocumentComponent .icon-container, .SelectedDocumentComponent .text-container .header, .SelectedDocumentComponent .text-container > a, .MCPClientComponent .prompt-container, .MCPClientComponent .prompt-container .ActionButton, .MCPClientComponent .modelSelectionComponent .llmInfoComponent, .MCPClientComponent .AIDebugComponent, .MCPClientComponent .PromptComponent, .MCPClientComponent .AIErrorComponent, .MCPClientComponent .UserPromptComponent, .MCPClientComponent .UserPromptComponent .TextComponent {
   flex: 0 0 auto;
 }
 
