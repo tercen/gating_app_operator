@@ -21734,6 +21734,11 @@ i[class^=tercen-]:before, i[class*=" tercen-"]:before {
 .MCPClientComponent .AIDebugComponent {
   display: none;
   margin-bottom: 1em;
+  background-color: #dc3545;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 300px;
+  max-width: 100%;
   background-color: #86ABD3;
   border-left: 3px solid rgb(96.6, 145.0363636364, 197.4);
 }
@@ -21748,13 +21753,10 @@ i[class^=tercen-]:before, i[class*=" tercen-"]:before {
   border-left: 3px solid rgb(64.8, 119.2909090909, 178.2);
 }
 .MCPClientComponent .AIDebugComponent .content {
-  max-height: 300px;
-  width: 100%;
   padding: 1em;
-  overflow-y: auto;
 }
-.MCPClientComponent .AIDebugComponent .content pre {
-  overflow: initial !important;
+.MCPClientComponent .AIDebugComponent pre {
+  white-space: break-spaces;
 }
 .MCPClientComponent .AIDebugComponent.show {
   display: block;
