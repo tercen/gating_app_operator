@@ -15437,6 +15437,40 @@ readers do not read off random characters that represent icons */
   color: #ff6946;
 }
 
+.SelectedDocumentComponent2 {
+  cursor: pointer;
+}
+.SelectedDocumentComponent2 .RandomIcon {
+  align-self: center;
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+.SelectedDocumentComponent2 .RandomIcon svg {
+  width: 2rem;
+  height: 2rem;
+}
+.SelectedDocumentComponent2 .name-container {
+  align-items: stretch;
+  flex-grow: 1;
+  padding-left: 1rem;
+}
+.SelectedDocumentComponent2 .name-container:hover {
+  cursor: pointer;
+  background-color: #eaf0f9;
+}
+.SelectedDocumentComponent2 .name-container.selected {
+  border-color: #509bb4;
+  background-color: #eaf0f9;
+}
+.SelectedDocumentComponent2 .name-container .TextComponent {
+  align-self: center;
+}
+
+.SelectDocumentComponent .InputTextComponent {
+  margin-bottom: 0.5rem;
+}
+
 .UserDeleteComponent {
   flex-grow: 1;
   display: flex;
